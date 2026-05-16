@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="University of Science and Technology Beijing">
   <meta property="og:title" content="MEDUSA: Motion Elimination in Diffusion Using Spectral Attack">
   <meta property="og:description" content="MEDUSA studies how spectral constraints can eliminate motion semantics in video diffusion models by inducing temporal rank collapse.">
-  <meta property="og:image" content="static/images/medusa-overview.png">
+  <meta property="og:image" content="static/images/medusa-overview-hd.png">
   <meta property="og:image:alt" content="MEDUSA overview figure">
   <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
   <meta property="article:author" content="Hongwei Yu">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MEDUSA: Motion Elimination in Diffusion Using Spectral Attack">
   <meta name="twitter:description" content="MEDUSA studies how spectral constraints can eliminate motion semantics in video diffusion models by inducing temporal rank collapse.">
-  <meta name="twitter:image" content="static/images/medusa-overview.png">
+  <meta name="twitter:image" content="static/images/medusa-overview-hd.png">
   <meta name="twitter:image:alt" content="MEDUSA overview figure">
 
   <meta name="citation_title" content="MEDUSA: Motion Elimination in Diffusion Using Spectral Attack">
@@ -60,24 +60,17 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
 
   <script type="application/ld+json">
@@ -98,7 +91,7 @@
     ],
     "datePublished": "2026-01-01",
     "publisher": {"@type": "Organization", "name": "ICML 2026"},
-    "image": "static/images/medusa-overview.png",
+    "image": "static/images/medusa-overview-hd.png",
     "keywords": ["video diffusion models", "image-to-video generation", "adversarial attack", "spectral attack", "temporal attention"],
     "abstract": "With the widespread application of Video Diffusion Models (VDMs), video synthesis has achieved remarkable temporal dynamics. Image-to-Video (I2V) generation allows users to provide reference images, which enables attackers to inject adversarial noise into these conditions. Due to the robust spatio-temporal priors in VDMs, conventional frame-level attacks merely induce superficial artifacts and struggle to suppress the synthesis of motion semantics. In this work, we approach the problem by exploring the underlying mechanism of temporal dynamics. We reveal that the static video manifests as temporal rank collapse, a degenerate state characterized by rank-1 degeneracy within the temporal attention matrix. Guided by this insight, we propose Motion Elimination in Diffusion Using Spectral Attack (MEDUSA) to freeze the video. It minimizes the nuclear norm of the attention matrix to induce the temporal rank collapse. This objective circumvents the vanishing gradient problem encountered when directly imposing a rigid temporal mapping on the attention matrix. Furthermore, we provide a mathematical analysis of this phenomenon and the gradient vanishing problem during the optimization. Experiments confirm that MEDUSA achieves excellent performance and validates the effectiveness of spectral constraints.",
     "isAccessibleForFree": true
@@ -131,8 +124,7 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block">University of Science and Technology Beijing, Beijing, China</span><br>
                 <span class="publication-venue">ICML 2026</span>
-                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                <span class="eql-cntrb"><small><br><sup>†</sup>Corresponding Author</small></span>
+                <div class="eql-cntrb"><small><sup>*</sup> Equal Contribution · <sup>†</sup> Corresponding Author</small></div>
               </div>
 
               <div class="publication-links">
@@ -171,9 +163,9 @@
       <div class="container is-max-desktop">
         <div class="hero-body">
           <figure class="publication-figure">
-            <img src="static/images/medusa-overview.png" alt="Overview of the MEDUSA spectral attack pipeline" loading="eager">
+            <img src="static/images/medusa-overview-hd.png" alt="Overview of the MEDUSA spectral attack pipeline" loading="eager">
             <figcaption>
-              MEDUSA eliminates motion in video diffusion by optimizing spectral constraints on temporal attention, inducing temporal rank collapse.
+              Overview of MEDUSA: a spectral attack that suppresses motion in video diffusion models by inducing temporal rank collapse.
             </figcaption>
           </figure>
         </div>
@@ -195,25 +187,30 @@
       </div>
     </section>
 
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3 has-text-centered">Results</h2>
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <img src="static/images/carousel1.jpg" alt="Placeholder result visualization for MEDUSA" loading="lazy">
-              <h2 class="subtitle has-text-centered">Placeholder for MEDUSA qualitative result visualization.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel2.jpg" alt="Placeholder comparison visualization for MEDUSA" loading="lazy">
-              <h2 class="subtitle has-text-centered">Placeholder for MEDUSA comparison with baseline attacks.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel3.jpg" alt="Placeholder ablation visualization for MEDUSA" loading="lazy">
-              <h2 class="subtitle has-text-centered">Placeholder for MEDUSA ablation and analysis results.</h2>
-            </div>
-          </div>
-        </div>
+    <section class="section method-analysis">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method &amp; Analysis</h2>
+
+        <figure class="analysis-figure">
+          <img src="static/images/result-attention-spectrum.png" alt="Temporal attention maps and singular value spectrum analysis for MEDUSA" loading="lazy">
+          <figcaption>
+            This analysis connects the visual attention pattern to the singular-value distribution. Clean generation preserves a high-rank temporal spectrum that supports motion, while MEDUSA drives the attention matrix toward a sparse spectrum associated with temporal rank collapse.
+          </figcaption>
+        </figure>
+
+        <figure class="analysis-figure analysis-figure--narrow">
+          <img class="analysis-figure--narrow" src="static/images/result-loss-comparison.png" alt="Optimization comparison between MEDUSA and a hard-target baseline" loading="lazy">
+          <figcaption>
+            The optimization curve highlights why the spectral objective is easier to optimize. Instead of forcing a rigid frame-level target, MEDUSA directly minimizes the nuclear norm of temporal attention, producing a smoother descent and avoiding the instability observed in hard-target supervision.
+          </figcaption>
+        </figure>
+
+        <figure class="analysis-figure">
+          <img src="static/images/result-qualitative-comparison.png" alt="Qualitative image examples showing clean inputs and adversarial perturbation results" loading="lazy">
+          <figcaption>
+            These qualitative examples illustrate that MEDUSA can impose motion-suppressing perturbations across diverse image-to-video prompts. The perturbations remain visually subtle in the input space while steering the downstream generation toward static or low-motion outputs.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -227,27 +224,14 @@
           </button>
         </div>
         <pre id="bibtex-code"><code>@inproceedings{yu2026medusa,
-  title={MEDUSA: Motion Elimination in Diffusion Using Spectral Attack},
-  author={Yu, Hongwei and Zha, Daoqing and Ding, Xinlong and Li, Jiawei and Zhuo, Junbao and Liu, Qiankun and Ma, Huimin and Chen, Jiansheng},
-  booktitle={Proceedings of the International Conference on Machine Learning},
-  year={2026}
+  title     = {MEDUSA: Motion Elimination in Diffusion Using Spectral Attack},
+  author    = {Yu, Hongwei and Zha, Daoqing and Ding, Xinlong and Li, Jiawei and Zhuo, Junbao and Liu, Qiankun and Ma, Huimin and Chen, Jiansheng},
+  booktitle = {Proceedings of the International Conference on Machine Learning},
+  year      = {2026}
 }</code></pre>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
