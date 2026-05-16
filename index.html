@@ -60,17 +60,21 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/index.js"></script>
 
   <script type="application/ld+json">
@@ -211,6 +215,129 @@
             These qualitative examples illustrate that MEDUSA can impose motion-suppressing perturbations across diverse image-to-video prompts. The perturbations remain visually subtle in the input space while steering the downstream generation toward static or low-motion outputs.
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="hero is-small video-results-section">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">Result</h2>
+          <div id="results-carousel" class="carousel results-carousel" aria-label="Clean and attacked video comparison carousel">
+            <div class="item" data-video-group="02">
+              <div class="video-pair">
+                <figure class="video-result">
+                  <figcaption>Clean generation</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 02 clean generation video">
+                    <source src="static/videos/clean/02.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+                <figure class="video-result video-result--attacked">
+                  <figcaption>MEDUSA attack</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 02 MEDUSA attack video">
+                    <source src="static/videos/attack/02.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+              </div>
+            </div>
+
+            <div class="item" data-video-group="03">
+              <div class="video-pair">
+                <figure class="video-result">
+                  <figcaption>Clean generation</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 03 clean generation video">
+                    <source src="static/videos/clean/03.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+                <figure class="video-result video-result--attacked">
+                  <figcaption>MEDUSA attack</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 03 MEDUSA attack video">
+                    <source src="static/videos/attack/03.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+              </div>
+            </div>
+
+            <div class="item" data-video-group="04">
+              <div class="video-pair">
+                <figure class="video-result">
+                  <figcaption>Clean generation</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 04 clean generation video">
+                    <source src="static/videos/clean/04.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+                <figure class="video-result video-result--attacked">
+                  <figcaption>MEDUSA attack</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 04 MEDUSA attack video">
+                    <source src="static/videos/attack/04.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+              </div>
+            </div>
+
+            <div class="item" data-video-group="05">
+              <div class="video-pair">
+                <figure class="video-result">
+                  <figcaption>Clean generation</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 05 clean generation video">
+                    <source src="static/videos/clean/05.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+                <figure class="video-result video-result--attacked">
+                  <figcaption>MEDUSA attack</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 05 MEDUSA attack video">
+                    <source src="static/videos/attack/05.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+              </div>
+            </div>
+
+            <div class="item" data-video-group="06">
+              <div class="video-pair">
+                <figure class="video-result">
+                  <figcaption>Clean generation</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 06 clean generation video">
+                    <source src="static/videos/clean/06.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+                <figure class="video-result video-result--attacked">
+                  <figcaption>MEDUSA attack</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 06 MEDUSA attack video">
+                    <source src="static/videos/attack/06.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+              </div>
+            </div>
+
+            <div class="item" data-video-group="07">
+              <div class="video-pair">
+                <figure class="video-result">
+                  <figcaption>Clean generation</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 07 clean generation video">
+                    <source src="static/videos/clean/07.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+                <figure class="video-result video-result--attacked">
+                  <figcaption>MEDUSA attack</figcaption>
+                  <video controls muted loop playsinline preload="metadata" aria-label="Example 07 MEDUSA attack video">
+                    <source src="static/videos/attack/07.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
