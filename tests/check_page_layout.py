@@ -40,9 +40,11 @@ parser.feed(html)
 page_text = "\n".join(parser.text_parts)
 compact_text = " ".join(parser.text_parts)
 
-assert "Method & Analysis" in page_text, "Expected Method & Analysis section heading"
+assert "Analysis" in page_text, "Expected concise Analysis section heading"
+assert "Method & Analysis" not in page_text, "Analysis section should not use Method wording"
 assert "* Equal Contribution · † Corresponding Author" in compact_text, "Author notes should be a single concise line"
-assert "Indicates Equal Contribution" not in page_text, "Author notes should not use inconsistent Indicates wording"
+assert "github-code-icon" in html, "Code button should include an inline GitHub icon"
+assert "fab fa-github" not in html, "Code button should not depend on missing Font Awesome brand webfonts"
 assert 'id="results-carousel" class="carousel results-carousel"' in html, "Expected template-style Bulma results carousel"
 assert "bulma-carousel.min.css" in html, "Carousel should load Bulma carousel CSS like the reference page"
 assert "bulma-carousel.min.js" in html, "Carousel should load Bulma carousel JavaScript like the reference page"
@@ -72,11 +74,12 @@ css = (PROJECT_ROOT / "static/css/index.css").read_text()
 assert ".analysis-figure--narrow" in css, "Expected CSS rule for constrained loss figure"
 assert "max-width: 560px" in css, "Loss figure max-width should be constrained to 560px"
 for caption in [
-    "This analysis connects the visual attention pattern to the singular-value distribution",
-    "The optimization curve highlights why the spectral objective is easier to optimize",
-    "These qualitative examples illustrate that MEDUSA can impose motion-suppressing perturbations",
+    "MEDUSA formulates motion elimination as a spectral attack on video diffusion models",
+    "Temporal attention reveals why MEDUSA eliminates motion",
+    "encounters the vanishing gradient problem described in the paper",
+    "Qualitative results show that MEDUSA suppresses temporal dynamics more completely than existing image- and video-level baselines",
 ]:
-    assert caption in page_text, f"Missing enriched caption text: {caption}"
+    assert caption in page_text, f"Missing paper-aligned caption text: {caption}"
 
 expected_video_groups = ["02", "03", "04", "05", "06", "07"]
 assert "Result" in page_text, "Carousel section should use the concise Result heading"

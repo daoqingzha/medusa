@@ -232,8 +232,9 @@ body {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.6;
-  margin: 1rem auto 0;
-  max-width: 900px;
+  margin: 1rem 0 0;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .method-analysis {
@@ -242,10 +243,10 @@ body {
 
 .analysis-figure {
   margin: 0 auto 3rem;
-  text-align: center;
 }
 
 .analysis-figure img {
+  display: block;
   width: 100%;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
@@ -259,9 +260,11 @@ body {
 .analysis-figure figcaption {
   color: var(--text-secondary);
   font-size: 1rem;
-  line-height: 1.6;
-  margin: 1rem auto 0;
-  max-width: 860px;
+  line-height: 1.7;
+  margin: 1rem 0 0;
+  max-width: none;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .video-results-section {

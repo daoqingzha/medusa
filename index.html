@@ -54,8 +54,8 @@
 
   <title>MEDUSA: Motion Elimination in Diffusion Using Spectral Attack | ICML 2026</title>
 
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/jpeg" href="static/images/7FE6B212-5153-4D4C-8299-5571E39B6DE7_1_201_a.jpeg">
+  <link rel="apple-touch-icon" href="static/images/7FE6B212-5153-4D4C-8299-5571E39B6DE7_1_201_a.jpeg">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -140,7 +140,11 @@
                 </span>
                 <span class="link-block">
                   <a href="#" class="external-link button is-normal is-rounded is-dark" aria-label="Code link placeholder">
-                    <span class="icon"><i class="fas fa-code"></i></span>
+                    <span class="icon" aria-hidden="true">
+                      <svg class="github-code-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" role="img" focusable="false">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
+                      </svg>
+                    </span>
                     <span>Code</span>
                   </a>
                 </span>
@@ -169,7 +173,7 @@
           <figure class="publication-figure">
             <img src="static/images/medusa-overview-hd.png" alt="Overview of the MEDUSA spectral attack pipeline" loading="eager">
             <figcaption>
-              Overview of MEDUSA: a spectral attack that suppresses motion in video diffusion models by inducing temporal rank collapse.
+              MEDUSA formulates motion elimination as a spectral attack on video diffusion models. Starting from a clean reference image, it optimizes an imperceptible adversarial perturbation by minimizing the nuclear norm of the temporal attention matrix, suppressing trailing singular values and inducing temporal rank collapse. The resulting rank-1 attention pattern makes frames attend to nearly the same temporal content, effectively freezing motion while preserving the scene semantics.
             </figcaption>
           </figure>
         </div>
@@ -193,26 +197,26 @@
 
     <section class="section method-analysis">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Method &amp; Analysis</h2>
+        <h2 class="title is-3 has-text-centered">Analysis</h2>
 
         <figure class="analysis-figure">
           <img src="static/images/result-attention-spectrum.png" alt="Temporal attention maps and singular value spectrum analysis for MEDUSA" loading="lazy">
           <figcaption>
-            This analysis connects the visual attention pattern to the singular-value distribution. Clean generation preserves a high-rank temporal spectrum that supports motion, while MEDUSA drives the attention matrix toward a sparse spectrum associated with temporal rank collapse.
+            Temporal attention reveals why MEDUSA eliminates motion. Clean generation keeps a high-rank, diagonal-dominant attention structure that supports temporal change, while the attacked attention matrix forms vertical stripe patterns: query frames attend to nearly identical key frames. The singular-value spectrum decays sharply after the attack, providing visual evidence of temporal rank collapse.
           </figcaption>
         </figure>
 
         <figure class="analysis-figure analysis-figure--narrow">
           <img class="analysis-figure--narrow" src="static/images/result-loss-comparison.png" alt="Optimization comparison between MEDUSA and a hard-target baseline" loading="lazy">
           <figcaption>
-            The optimization curve highlights why the spectral objective is easier to optimize. Instead of forcing a rigid frame-level target, MEDUSA directly minimizes the nuclear norm of temporal attention, producing a smoother descent and avoiding the instability observed in hard-target supervision.
+            The optimization comparison explains the advantage of the spectral objective. A hard target that directly forces a static attention template encounters the vanishing gradient problem described in the paper and fails to optimize reliably. MEDUSA instead minimizes the nuclear norm of temporal attention, giving a smooth and stable descent path toward a lower-rank state.
           </figcaption>
         </figure>
 
         <figure class="analysis-figure">
           <img src="static/images/result-qualitative-comparison.png" alt="Qualitative image examples showing clean inputs and adversarial perturbation results" loading="lazy">
           <figcaption>
-            These qualitative examples illustrate that MEDUSA can impose motion-suppressing perturbations across diverse image-to-video prompts. The perturbations remain visually subtle in the input space while steering the downstream generation toward static or low-motion outputs.
+            Qualitative results show that MEDUSA suppresses temporal dynamics more completely than existing image- and video-level baselines. Competing attacks may leave residual foreground or background motion, introduce color shifts, or create structural artifacts, whereas MEDUSA produces perceptually static video sequences while preserving the semantic content of the input scene.
           </figcaption>
         </figure>
       </div>
