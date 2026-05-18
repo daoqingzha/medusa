@@ -162,6 +162,29 @@ body {
     display: inline-block;
 }
 
+.publication-logo-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin: 1.25rem auto 0.75rem;
+}
+
+.publication-logo {
+    display: block;
+    width: auto;
+    object-fit: contain;
+}
+
+.publication-logo--ustb {
+    height: 60px;
+}
+
+.publication-logo--icml {
+    height: 46px;
+}
+
 .publication-awards {
     color: #ef4444;
     width: fit-content;
@@ -363,9 +386,9 @@ body {
   transform: scale(1.2);
 }
 
-.eql-cntrb { 
-  font-size: 0.875rem;
-  color: var(--text-light);
+.eql-cntrb {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   font-style: italic;
 }
 
