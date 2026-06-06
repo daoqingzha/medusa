@@ -54,8 +54,8 @@
 
   <title>MEDUSA: Motion Elimination in Diffusion Using Spectral Attack | ICML 2026</title>
 
-  <link rel="icon" type="image/jpeg" href="static/images/7FE6B212-5153-4D4C-8299-5571E39B6DE7_1_201_a.jpeg">
-  <link rel="apple-touch-icon" href="static/images/7FE6B212-5153-4D4C-8299-5571E39B6DE7_1_201_a.jpeg">
+  <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
+  <link rel="apple-touch-icon" href="static/images/logo.ico">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -115,14 +115,14 @@
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">MEDUSA: Motion Elimination in Diffusion Using Spectral Attack</h1>
               <div class="is-size-5 publication-authors">
-                <span class="author-block">Hongwei Yu<sup>*</sup>,</span>
-                <span class="author-block">Daoqing Zha<sup>*</sup>,</span>
-                <span class="author-block">Xinlong Ding,</span>
-                <span class="author-block">Jiawei Li,</span>
-                <span class="author-block">Junbao Zhuo,</span>
-                <span class="author-block">Qiankun Liu,</span>
-                <span class="author-block">Huimin Ma,</span>
-                <span class="author-block">Jiansheng Chen<sup>†</sup></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=cDidt64AAAAJ" target="_blank" rel="noopener noreferrer">Hongwei Yu</a><sup>*</sup>,</span>
+                <span class="author-block"><a href="https://daoqingzha.site/" target="_blank" rel="noopener noreferrer">Daoqing Zha</a><sup>*</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=JY9oXVIAAAAJ" target="_blank" rel="noopener noreferrer">Xinlong Ding</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=xWy8RZEAAAAJ" target="_blank" rel="noopener noreferrer">Jiawei Li</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=iBt9uHUAAAAJ" target="_blank" rel="noopener noreferrer">Junbao Zhuo</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=TNDbzzMAAAAJ" target="_blank" rel="noopener noreferrer">Qiankun Liu</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=32hwVLEAAAAJ" target="_blank" rel="noopener noreferrer">Huimin Ma</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=A1gA9XIAAAAJ" target="_blank" rel="noopener noreferrer">Jiansheng Chen</a><sup><a class="author-email" href="mailto:jschen@ustb.edu.cn" aria-label="Email Jiansheng Chen"><i class="fas fa-envelope"></i></a></sup></span>
               </div>
 
               <div class="is-size-5 publication-authors">
@@ -131,7 +131,7 @@
                   <img class="publication-logo publication-logo--ustb" src="static/images/校徽.png" alt="University of Science and Technology Beijing logo" loading="eager">
                   <img class="publication-logo publication-logo--icml" src="static/images/ICML-logo.svg" alt="ICML logo" loading="eager">
                 </div>
-                <div class="eql-cntrb"><sup>*</sup> Equal Contribution · <sup>†</sup> Corresponding Author</div>
+                <div class="eql-cntrb"><sup>*</sup> Equal Contribution · <i class="fas fa-envelope"></i> Corresponding Author</div>
               </div>
 
               <div class="publication-links">
@@ -142,7 +142,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark" aria-label="Code link placeholder">
+                  <a href="https://github.com/medusa-research/medusa" class="external-link button is-normal is-rounded is-dark" aria-label="MEDUSA code repository on GitHub" target="_blank" rel="noopener noreferrer">
                     <span class="icon" aria-hidden="true">
                       <svg class="github-code-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" role="img" focusable="false">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
@@ -209,19 +209,21 @@
           </figcaption>
         </figure>
 
-        <figure class="analysis-figure analysis-figure--narrow">
-          <img class="analysis-figure--narrow" src="static/images/result-loss-comparison.png" alt="Optimization comparison between MEDUSA and a hard-target baseline" loading="lazy">
-          <figcaption>
-            The optimization comparison explains the advantage of the spectral objective. A hard target that directly forces a static attention template encounters the vanishing gradient problem described in the paper and fails to optimize reliably. MEDUSA instead minimizes the nuclear norm of temporal attention, giving a smooth and stable descent path toward a lower-rank state.
-          </figcaption>
-        </figure>
+        <div class="analysis-pair" aria-label="Optimization and imperceptibility analysis">
+          <figure class="analysis-figure analysis-pair__figure analysis-pair__figure--loss">
+            <img src="static/images/result-loss-comparison.png" alt="Loss curves comparing MEDUSA optimization with baseline objectives" loading="lazy">
+            <figcaption>
+              <strong>Optimization stability.</strong> MEDUSA provides a smoother descent path than hard attention targets, avoiding early gradient saturation.
+            </figcaption>
+          </figure>
 
-        <figure class="analysis-figure">
-          <img src="static/images/result-qualitative-comparison.png" alt="Qualitative image examples showing clean inputs and adversarial perturbation results" loading="lazy">
-          <figcaption>
-            Qualitative results show that MEDUSA suppresses temporal dynamics more completely than existing image- and video-level baselines. Competing attacks may leave residual foreground or background motion, introduce color shifts, or create structural artifacts, whereas MEDUSA produces perceptually static video sequences while preserving the semantic content of the input scene.
-          </figcaption>
-        </figure>
+          <figure class="analysis-figure analysis-pair__figure analysis-pair__figure--imperceptibility">
+            <img src="static/images/result-qualitative-comparison.png" alt="Imperceptibility analysis of the MEDUSA adversarial perturbation" loading="lazy">
+            <figcaption>
+              <strong>Imperceptibility.</strong> The perturbation stays visually subtle while still removing temporal motion in the generated video.
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

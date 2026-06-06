@@ -280,6 +280,44 @@ body {
   max-width: 560px;
 }
 
+.analysis-pair {
+  align-items: start;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto 3rem;
+}
+
+.analysis-pair__figure {
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.analysis-pair__figure img {
+  box-shadow: none;
+  height: 260px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.analysis-pair__figure figcaption {
+  border-top: 1px solid var(--border-color);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+}
+
+.analysis-pair__figure figcaption strong {
+  color: var(--text-primary);
+}
+
 .analysis-figure figcaption {
   color: var(--text-secondary);
   font-size: 1rem;
@@ -566,6 +604,15 @@ code {
 
   .video-pair {
     grid-template-columns: 1fr;
+  }
+
+  .analysis-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-pair__figure img {
+    height: auto;
+    max-height: none;
   }
 
   .teaser .hero-body {
